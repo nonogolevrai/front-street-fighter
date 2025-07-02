@@ -37,7 +37,7 @@ const CharacterCard = ({
         <CardTitle className="flex items-center space-x-4">
           <Avatar>
           <AvatarImage
-            src={`http://localhost:8001${character.imagePath}`}
+            src={`https://www.noam-rpg-project.codegt.garage404.com${character.imagePath}`}
             alt={character.name}
           />
           <AvatarFallback>{character.name.slice(0, 2).toUpperCase()}</AvatarFallback>
@@ -80,7 +80,7 @@ export default function CharactersPage() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://localhost:8001/api/get');
+      const response = await fetch('https://www.noam-rpg-project.codegt.garage404.com/api/get');
       if (!response.ok) throw new Error('Erreur lors du chargement des personnages.');
       const data = await response.json();
       setCharacters(data);
@@ -93,7 +93,7 @@ export default function CharactersPage() {
 
   const handleDelete = async (id: number) => {
     try {
-      const response = await fetch(`http://localhost:8001/api/${id}`, {
+      const response = await fetch(`https://www.noam-rpg-project.codegt.garage404.com/api/${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) throw new Error('Erreur lors de la suppression.');

@@ -22,7 +22,7 @@ const Characters = () => {
 
   const fetchCharacters = async () => {
     try {
-      const response = await fetch("https://www.noam-rpg-project.codegt.garage404.com/api/get"); // Replace with your Symfony API endpoint
+      const response = await fetch("https://www.noam-rpg-project.codegt.garage404.comapi/get"); // Replace with your Symfony API endpoint
       if (!response.ok) {
         throw new Error("Failed to fetch characters");
       }

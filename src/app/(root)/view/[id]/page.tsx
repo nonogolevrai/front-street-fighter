@@ -46,7 +46,7 @@ export default function EditCharacterPage() {
 
   const fetchCharacter = async () => {
     try {
-      const res = await fetch("http://localhost:8001/api/get");
+      const res = await fetch("https://www.noam-rpg-project.codegt.garage404.com/api/get");
       const data: Character[] = await res.json();
       const found = data.find((c) => c.id === id);
       if (!found) throw new Error("Character not found.");
@@ -90,7 +90,7 @@ export default function EditCharacterPage() {
       console.log(formData)
 
 
-      const response = await fetch(`http://localhost:8001/api/edit/${id}`, {
+      const response = await fetch(`https://www.noam-rpg-project.codegt.garage404.com/api/edit/${id}`, {
         method: "POST",
         body: formData,
       });
@@ -146,7 +146,7 @@ export default function EditCharacterPage() {
                       src={
                         newImageFile
                           ? URL.createObjectURL(newImageFile)
-                          : `http://localhost:8001${character.imagePath}`
+                          : `https://www.noam-rpg-project.codegt.garage404.com${character.imagePath}`
                       }
                       alt={character.name}
                     />
