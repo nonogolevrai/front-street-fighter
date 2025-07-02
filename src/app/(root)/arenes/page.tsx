@@ -57,8 +57,8 @@ const CharacterCard = ({
             </div>
           ))}
           <div className="flex space-x-4 mt-4">
-            <Button onClick={() => onEdit(character.id)} variant="outline">Edit</Button>
-            <Button onClick={() => onDelete(character.id)} variant="destructive">Delete</Button>
+            <Button onClick={() => onEdit(character.id)} variant="outline">Voir</Button>
+            <Button onClick={() => onDelete(character.id)} variant="destructive">Défier</Button>
           </div>
         </div>
       </CardContent>
@@ -104,7 +104,7 @@ export default function CharactersPage() {
   };
 
   const handleEdit = (id: number) => {
-    router.push(`/modification/${id}`);
+    router.push(`/view/${id}`);
   };
 
   return (
@@ -117,6 +117,7 @@ export default function CharactersPage() {
           transition={{ duration: 0.5 }}
           className="text-4xl font-bold mb-8 text-center"
         >
+          
           Les Combattants
         </motion.h1>
 

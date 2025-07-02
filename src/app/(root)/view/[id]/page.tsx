@@ -129,7 +129,7 @@ export default function EditCharacterPage() {
           transition={{ duration: 0.5 }}
           className="text-4xl font-bold mb-8 text-center"
         >
-          Modification du Combattant
+          Le Combattant
         </motion.h1>
 
         {isLoading ? (
@@ -166,19 +166,7 @@ export default function EditCharacterPage() {
                         setCharacter({ ...character, name: e.target.value })
                       }
                       required
-                      className="bg-gray-700 text-white placeholder-white"
-                    />
-
-                    <Label htmlFor="image" className="block mt-4 text-white">
-                      Nouvelle image
-                    </Label>
-                    <Input
-                      id="image"
-                      name="image"
-                      type="file"
-                      accept="image/*"
-                      onChange={handleImageUpload}
-                      className="bg-gray-700 text-white"
+                      className="bg-gray-700 text-white placeholder-white" readOnly
                     />
                   </div>
                 </div>
@@ -202,7 +190,7 @@ export default function EditCharacterPage() {
                           step={1}
                           value={[character[stat.key as keyof Character] as number]}
                           onValueChange={(val) => handleStatChange(stat.key, val)}
-                          className="w-full"
+                          className="w-full" disabled
                         />
                       </div>
                     ))}
